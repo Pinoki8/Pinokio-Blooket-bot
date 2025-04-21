@@ -1,12 +1,13 @@
 # Pinokio-Blooket-bot
 Easy blooket bot (mabye first ever)
 
-# How to install:
-1. Download [javascript](https://nodejs.org/)
+# How to use:
+1. Download [javascript](https://nodejs.org/)  
 2.in CMD type:
 npm init -y
 npm install playwright
-npx playwright install.
+npx playwright install  
+3. Open blooket botter, type all info and watch magic happen
 
 # Important notes:
 the program will spam some chrome tabs, but don't close them, just wait until all of them load up
