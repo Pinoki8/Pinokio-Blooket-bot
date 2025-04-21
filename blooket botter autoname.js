@@ -53,7 +53,6 @@ function ask(q) {
 
     (async function autoClick() {
       try {
-        // Look for the specific join button with exact selector
         const joinButton = await page.$('div[type="submit"][role="button"][class*="_joinButton_"][tabindex="0"]');
         if (joinButton) {
           await joinButton.click();
@@ -61,20 +60,16 @@ function ask(q) {
         }
       } catch (e) {}
 
-      // If we've clicked several times and can no longer find the button,
-      // we've likely joined the game
       if (consecutiveClicks > 5 && !joinedGame) {
-        // Check if we can't find the button anymore
         try {
           const joinButton = await page.$('div[type="submit"][role="button"][class*="_joinButton_"][tabindex="0"]');
           if (!joinButton) {
             joinedGame = true;
-            console.log(`🎮 Bot #${i + 1} joined the game! (Game ID: ${gameCode}) 🚀`);
+            console.log(` Bot #${i + 1} joined the game! (Game ID: ${gameCode}) 🚀`);
           }
         } catch (e) {}
       }
 
-      // Continue clicking every 200ms regardless
       setTimeout(autoClick, 200);
     })();
   }
