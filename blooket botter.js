@@ -74,17 +74,15 @@ function ask(q) {
         }
       } catch (e) {}
 
-      // If we couldn't find either element, increment failure counter
       if (!foundInput && !foundButton) {
         consecutiveFailures++;
       } else {
         consecutiveFailures = 0;
       }
 
-      // After several consecutive failures, we assume the bot has joined
       if (consecutiveFailures > 10 && !joinedGame) {
         joinedGame = true;
-        console.log(`🎮 Bot #${i + 1} joined the game! (Game ID: ${gameCode}) 🚀`);
+        console.log(` Bot #${i + 1} joined the game! (Game ID: ${gameCode}) 🚀`);
       }
 
       setTimeout(keepLooking, 200);
